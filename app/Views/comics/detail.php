@@ -19,14 +19,18 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title"><?= $comic['judul']; ?></h5>
-                            <p class="card-text"><b><?= $comic['author']; ?></b></p>
+                            <h5 class="card-title"><?= $comics['judul']; ?></h5>
+                            <p class="card-text"><b><?= $comics['penulis']; ?></b></p>
                             <p class="card-text">
-                                <small class="text-muted"><?= $comic['updated_at']; ?></small>
+                                <small class="text-muted"><?= $comics['updated_at']; ?></small>
                             </p>
 
-                            <a href="" class="btn btn-secondary">Edit</a>
-                            <a href="" class="btn btn-danger">Delete</a>
+                            <a href="/comics/edit/<?= $comics['slug']; ?>" class="btn btn-secondary">Edit</a>
+                            <form class="d-inline" action="/comics/delete/<?= $comics['id']; ?>" method="post">
+                                <?= csrf_field(); ?>
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin?')">Delete</button>
+                            </form>
                         </div>
                     </div>
                 </div>
