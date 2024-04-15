@@ -1,9 +1,3 @@
-<?php
-/**
- * @var CodeIgniter\View\View $this
-*/
-?>
-
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
