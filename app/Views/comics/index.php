@@ -30,7 +30,7 @@
                     <?php foreach ($comics as $com) : ?>
                         <tr class="align-middle">
                             <th scope="row"><?= $i++; ?></th>
-                            <td><img src="/img/<?= $com['sampul']; ?>" alt=""></td>
+                            <td><img src="/img/<?= $com['sampul']; ?>" class="img-fluid img-thumbnail" style="width: 100px;" alt=""></td>
                             <td><?= $com['judul']; ?></td>
                             <td><?= $com['penulis']; ?></td>
                             <td><?= $com['penerbit']; ?></td>

@@ -1,12 +1,11 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
-
 <div class="container">
     <div class="row">
         <div class="col">
             <h1 class="mb-4">Tambah Komik</h1>
-            <form action="/comics/save" method="post">
+            <form action="/comics/save" method="post" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
                 <div class="form-group row mb-4">
                     <label for="judul" class="col-sm-2 col-form-label">Judul</label>
@@ -31,8 +30,14 @@
                 </div>
                 <div class="form-group row mb-4">
                     <label for="sampul" class="col-sm-2 col-form-label">Sampul</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="sampul" name="sampul">
+                    <div class="col-sm-2">
+                        <img id="img-preview" src="/img/images.png" class="img-thumbnail" alt="">
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="file" class="form-control" id="sampul" name="sampul">
+                        <div class="invalid-feedback">
+                            <?= ($validation) ? $validation->getError('sampul') : '' ?>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group row mb-4">
@@ -44,6 +49,4 @@
         </div>
     </div>
 </div>
-</div>
-
 <?= $this->endSection(); ?>

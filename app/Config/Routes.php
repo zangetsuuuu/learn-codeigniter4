@@ -20,3 +20,4 @@ $routes->get('/comics/create', 'Comics::create');
 $routes->get('/comics/edit/(:any)', 'Comics::edit/$1');
 $routes->delete('/comics/(:num)', 'Comics::delete');
 $routes->get('/comics/(:any)', 'Comics::detail/$1');
+$routes->post('/comics/save', 'Comics::save');
